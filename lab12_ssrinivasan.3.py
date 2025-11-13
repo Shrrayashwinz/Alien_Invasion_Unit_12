@@ -30,8 +30,7 @@ class AlienInvasion:
                     sys.exit()
             self.screen.blit(self.bg, (0,0))
             pygame.display.flip() 
-            self.clock.tick(60)
-
+            self.clock.tick(self.settings.FPS)
 
 
 if __name__ == '__main__':
