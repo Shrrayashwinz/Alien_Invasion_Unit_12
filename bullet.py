@@ -9,9 +9,10 @@ class Bullet(Sprite):
      def __init__(self, game: 'AlienInvasion'):
           super().__init__()
           self.screen = game.screen
+          self.settings = game.settings
 
           self.image = pygame.image.load(self.settings.bullet_file)
-          self.image = pygame.transform.scale(self.image
+          self.image = pygame.transform.scale(self.image,
                 (self.settings.bullet_w, self.settings.bullet_h)
                 )
           

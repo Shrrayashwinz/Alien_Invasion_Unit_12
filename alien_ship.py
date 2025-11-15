@@ -1,9 +1,11 @@
 import pygame
 from typing import TYPE_CHECKING
+from arsenal import Arsenal 
+
 
 if TYPE_CHECKING:
      from lab12_ssrinivasan3 import AlienInvasion
-     from arsenal import Arsenal
+
 
 
 class Ship:
@@ -28,6 +30,7 @@ class Ship:
     
 
     def update(self):
+
         self._update_ship_movement()
         self.arsenal.update_arsenal()
 

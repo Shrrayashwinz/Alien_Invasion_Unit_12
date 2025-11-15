@@ -2,7 +2,7 @@ import sys
 import pygame
 from settings import Settings
 from alien_ship import Ship
-from arsenal import Arsenal
+from arsenal import Arsenal 
 
 class AlienInvasion:
     def __init__(self):
@@ -53,21 +53,21 @@ class AlienInvasion:
         if event.key == pygame.K_LEFT:
             self.alien_ship.moving_left = False
 
-        if event.key == pygame.K_RIGHT:
-            self.alien_ship.moving_right = False
+        elif event.key == pygame.K_RIGHT:
+            self.alien_ship.moving_right = False 
 
 
     def _check_keydown_events(self, event):
         if event.key == pygame.K_LEFT:
             self.alien_ship.moving_left = True
 
-        if event.key == pygame.K_RIGHT:
+        elif event.key == pygame.K_RIGHT:
             self.alien_ship.moving_right = True
         
         elif event.key == pygame.K_SPACE:
             self.alien_ship.fire()
 
-        if event.key == pygame.K_q:
+        elif event.key == pygame.K_q:
             pygame.quit()
             sys.exit()
 
@@ -75,4 +75,3 @@ class AlienInvasion:
 if __name__ == '__main__':
     ai = AlienInvasion() 
     ai.run_game()
- 
