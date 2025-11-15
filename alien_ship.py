@@ -3,11 +3,12 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
      from lab12_ssrinivasan3 import AlienInvasion
+     from arsenal import Arsenal
 
 
 class Ship:
 
-    def __init__(self, game: 'AlienInvasion'):
+    def __init__(self, game: 'AlienInvasion', arsenal: 'Arsenal'):
         self.game = game
         self.settings = game.settings
         self.screen = game.screen
@@ -23,9 +24,14 @@ class Ship:
         self.moving_right = False
         self.moving_left = False
         self.x = float(self.rect.x)
+        self.arsenal = arsenal
     
 
     def update(self):
+        self._update_ship_movement()
+        self.arsenal.update_arsenal()
+
+    def _update_ship_movement(self):
         temp_speed = self.settings.alien_ship_speed
         if self.moving_right and self.rect.right < self.boundaries.right:
             self.x += temp_speed
@@ -37,4 +43,8 @@ class Ship:
     
 
     def draw(self):
+        self.arsenal.draw()
         self.screen.blit(self.image, self.rect)
+    
+    def fire(self):
+        return self.arsenal.fire_bullet()
