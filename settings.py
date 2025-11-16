@@ -20,9 +20,9 @@ class Settings:
         self.bullet_h = 80
         self.bullet_amount = 10
 
+
         self.ship_side = "left"   
         self.ship_side = "right"
-
 
 
 

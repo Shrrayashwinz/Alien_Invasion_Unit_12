@@ -29,7 +29,7 @@ class Ship:
             self.rect.midright = self.boundaries.midright     # <<< MODIFIED >>>
             self.image = pygame.transform.flip(self.image, True, False)
 
-        # self.rect.midbottom = self.boundaries.midbottom
+        self.rect.midbottom = self.boundaries.midbottom
         self.moving_up = False
         self.moving_down = False
         self.moving_right = False
