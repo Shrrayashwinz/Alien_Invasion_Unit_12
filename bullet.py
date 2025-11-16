@@ -12,24 +12,19 @@ class Bullet(Sprite):
           self.settings = game.settings
 
           self.image = pygame.image.load(self.settings.bullet_file)
-          self.image = pygame.transform.scale(self.image,
+          self.image = pygame.transform.scale(
+                self.image,
                 (self.settings.bullet_w, self.settings.bullet_h)
-                )
+          )
           
           self.rect = self.image.get_rect()
-          self.rect.midtop = game.alien_ship.rect.midtop
-          self.y = float(self.rect.y)
+          self.rect.midtop = game.alien_ship.rect.midtop  
 
-          self.rect.centery = game.alien_ship.rect.centery
-          self.rect.left = game.alien_ship.rect.right      
-          self.x = float(self.rect.x)  
+          self.y = float(self.rect.y)
 
      def update(self):
           self.y -= self.settings.bullet_speed
           self.rect.y = self.y
 
-          self.x += self.settings.bullet_speed       
-          self.rect.x = self.x                
-        
      def draw_bullet(self):
           self.screen.blit(self.image, self.rect)
