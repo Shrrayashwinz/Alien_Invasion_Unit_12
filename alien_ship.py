@@ -23,13 +23,9 @@ class Ship:
         
         self.rect = self.image.get_rect()
         
-        if self.settings.ship_side == "left":                 # <<< MODIFIED >>>
-            self.rect.midleft = self.boundaries.midleft       # <<< MODIFIED >>>
-        elif self.settings.ship_side == "right":              # <<< MODIFIED >>>
-            self.rect.midright = self.boundaries.midright     # <<< MODIFIED >>>
-            self.image = pygame.transform.flip(self.image, True, False)
 
         self.rect.midbottom = self.boundaries.midbottom
+
         self.moving_up = False
         self.moving_down = False
         self.moving_right = False

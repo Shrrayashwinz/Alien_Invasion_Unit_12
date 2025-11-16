@@ -20,7 +20,7 @@ class Bullet(Sprite):
           self.rect.midtop = game.alien_ship.rect.midtop
           self.y = float(self.rect.y)
 
-          self.rect.center = game.alien_ship.rect.center 
+          self.rect.centery = game.alien_ship.rect.centery
           self.rect.left = game.alien_ship.rect.right      
           self.x = float(self.rect.x)  
 
