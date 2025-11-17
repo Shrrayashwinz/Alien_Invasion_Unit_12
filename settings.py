@@ -1,3 +1,11 @@
+"""
+Program Name: Lab12_pcarswel_Shrrayash_1.py
+Author: Shrrayash Srinivasan
+Purpose: Defined settings for the Alien Invasion game, including screen dimensions, asset paths, ship and bullet behavior, 
+and initial ship placements. 
+Date: November 16, 2025
+"""
+
 from pathlib import Path
 class Settings:
 

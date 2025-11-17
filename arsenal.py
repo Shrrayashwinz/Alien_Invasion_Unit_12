@@ -1,3 +1,15 @@
+"""
+Program Name: arsenal.py
+
+Author: Shrrayash Srinivasan
+
+Purpose: Defined the Arsenal class so that it can manage the bullet creating, aswell as the updating and the elimination of
+bullets that go offscreen.
+
+Date: November 16, 2025
+"""
+
+
 import pygame
 from bullet import Bullet
 from typing import TYPE_CHECKING

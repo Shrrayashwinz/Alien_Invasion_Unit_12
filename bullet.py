@@ -1,3 +1,13 @@
+"""
+Program Name: bullet.py
+
+Author: Shrrayash Srinivasan
+
+Purpose: Defined the Bullet class with the use of the Sprite system. It is an important part of the alien ship firing mechanism and
+the bullets fire out of the ship and the code is done specifically to track the movement and speed of the lasers.
+
+Date: November 16, 2025
+"""
 import pygame
 from pygame.sprite import Sprite
 from typing import TYPE_CHECKING

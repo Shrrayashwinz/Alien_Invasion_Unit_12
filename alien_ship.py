@@ -1,3 +1,15 @@
+"""
+Program Name: alien_ship.py
+
+Author: Shrrayash Srinivasan
+
+Purpose: I added the alien ship file and installed a ship class for the ALien Invasion game. This file hands the ship initialization,
+movement, drawing, and the firing processors. It also integrates with the TYPE_CHECKING and the Arsenal class.
+
+Date: November 16, 2025
+"""
+
+
 import pygame
 from typing import TYPE_CHECKING
 from arsenal import Arsenal 
@@ -24,14 +36,13 @@ class Ship:
         self.rect = self.image.get_rect()
 
 
-        if self.settings.ship_side == "left":                 # <<< MODIFIED >>>
-            self.rect.midleft = self.boundaries.midleft       # <<< MODIFIED >>>
-        elif self.settings.ship_side == "right":              # <<< MODIFIED >>>
-            self.rect.midright = self.boundaries.midright     # <<< MODIFIED >>>
+        if self.settings.ship_side == "left":                 
+            self.rect.midleft = self.boundaries.midleft       
+        elif self.settings.ship_side == "right":              
+            self.rect.midright = self.boundaries.midright    
             self.image = pygame.transform.flip(self.image, True, False)
         
 
-        #self.rect.midbottom = self.boundaries.midbottom
         self.moving_up = False
         self.moving_down = False
         self.moving_right = False

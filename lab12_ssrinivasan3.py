@@ -1,3 +1,14 @@
+"""
+Program Name: Lab12_ssrinivasan3_#1.py
+
+Author: Shrrayash Srinivasan
+
+Purpose: This serves as the main module for the game Alien Invasion. It has all the neccessary functions from the other files to 
+ensure the game is operational. 
+
+Date: November 16, 2025
+"""
+
 import sys
 import pygame
 from settings import Settings
