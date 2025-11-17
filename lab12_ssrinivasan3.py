@@ -1,5 +1,5 @@
 """
-Program Name: Lab12_ssrinivasan3_#1.py
+Program Name: Lab12_ssrinivasan3.py
 
 Author: Shrrayash Srinivasan
 
