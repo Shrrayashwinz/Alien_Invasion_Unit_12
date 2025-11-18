@@ -6,6 +6,8 @@ Author: Shrrayash Srinivasan
 Purpose: This serves as the main module for the game Alien Invasion. It has all the neccessary functions from the other files to 
 ensure the game is operational. 
 
+!!!!THIS IS A TUTORIAL CODE!!!!
+
 Date: November 16, 2025     
 """
 

@@ -6,6 +6,9 @@ Author: Shrrayash Srinivasan
 Purpose: I added the alien ship file and installed a ship class for the ALien Invasion game. This file hands the ship initialization,
 movement, drawing, and the firing processors. It also integrates with the TYPE_CHECKING and the Arsenal class.
 
+!!!!THIS IS A TUTORIAL CODE!!!!
+
+
 Date: November 16, 2025
 """
 
