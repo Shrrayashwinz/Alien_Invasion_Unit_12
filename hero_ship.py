@@ -1,5 +1,5 @@
 """
-Program Name: alien_ship.py
+Program Name: hero_ship.py
 
 Author: Shrrayash Srinivasan
 
@@ -28,9 +28,9 @@ class Ship:
         self.screen = game.screen
         self.boundaries = self.screen.get_rect()
 
-        self.image = pygame.image.load(self.settings.alien_ship_file)
+        self.image = pygame.image.load(self.settings.hero_ship_file)
         self.image = pygame.transform.scale(self.image,
-            (self.settings.alien_ship_w, self.settings.alien_ship_h)
+            (self.settings.hero_ship_w, self.settings.hero_ship_h)
             )
         
         self.rect = self.image.get_rect()
@@ -58,7 +58,7 @@ class Ship:
         self.arsenal.update_arsenal()
 
     def _update_ship_movement(self):
-        temp_speed = self.settings.alien_ship_speed
+        temp_speed = self.settings.hero_ship_speed
         if self.moving_right and self.rect.right < self.boundaries.right:
             self.x += temp_speed
         

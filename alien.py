@@ -1,5 +1,5 @@
 """
-Program Name: bullet.py
+Program Name: alien.py
 
 Author: Shrrayash Srinivasan
 
@@ -15,26 +15,26 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
      from lab12_ssrinivasan3 import AlienInvasion
 
-class Bullet(Sprite):
-     def __init__(self, game: 'AlienInvasion'):
+class Alien(Sprite):
+     def __init__(self, game: 'AlienInvasion', x: float, y: float):
           super().__init__()
           self.screen = game.screen
+          self.boundaries = game.screen.get_rect()
           self.settings = game.settings
 
-          self.image = pygame.image.load(self.settings.bullet_file)
+          self.image = pygame.image.load(self.settings.alien_file)
           self.image = pygame.transform.scale(
                 self.image,
-                (self.settings.bullet_w, self.settings.bullet_h)
+                (self.settings.alien_w, self.settings.alien_h)
           )
           
           self.rect = self.image.get_rect()
-          self.rect.midtop = game.hero_ship.rect.midtop  
+          self.rect.x = x
+          self.rect.y = y
 
           self.y = float(self.rect.y)
 
      def update(self):
-          self.y -= self.settings.bullet_speed
-          self.rect.y = self.y
-
-     def draw_bullet(self):
+          pass
+     def draw_alien(self):
           self.screen.blit(self.image, self.rect)
