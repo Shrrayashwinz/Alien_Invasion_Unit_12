@@ -49,7 +49,7 @@ class AlienInvasion:
         while self.running:
             self._check_events()
             self.hero_ship.update()
-            #self.alien_fleet.update()
+            self.alien_fleet.update_fleet()
             self._update_screen() 
             self.clock.tick(self.settings.FPS)
 
