@@ -14,14 +14,18 @@ Date: November 16, 2025
 import sys
 import pygame
 from settings import Settings
+from game_stats import GameStats
 from hero_ship import Ship
 from arsenal import Arsenal 
 from alien_fleet import AlienFleet
+from time import sleep
 
 class AlienInvasion:
     def __init__(self):
         pygame.init()
         self.settings = Settings()
+
+        self.game_stats = GameStats(self.settings.starting_hero_ship_count)
 
 
         self.screen = pygame.display.set_mode(
@@ -47,23 +51,25 @@ class AlienInvasion:
         self.hero_ship = Ship(self, Arsenal(self))
         self.alien_fleet = AlienFleet(self)
         self.alien_fleet.create_fleet()
+        self.game_active = True
     
     def run_game(self):
         while self.running:
             self._check_events()
-            self.hero_ship.update()
-            self.alien_fleet.update_fleet()
-            self._check_collisions()
-            self._check_events()
+            if self.game_active:
+               self.hero_ship.update()
+               self.alien_fleet.update_fleet()
+               self._check_collisions()
+               self._check_events()
             self._update_screen() 
             self.clock.tick(self.settings.FPS)
   
     def _check_collisions(self):
         if self.hero_ship.check_collisions(self.alien_fleet.fleet):
-            self._reset_level()
+            self._check_game_status()
 
         if self.alien_fleet.check_fleet_bottom():
-            self._reset_level()
+            self._check_game_status()
 
 
         collisions = self.alien_fleet.check_collisions(self.hero_ship.arsenal.arsenal)
@@ -72,10 +78,18 @@ class AlienInvasion:
             self.impact_sound.fadeout(1000)
         
         if self.alien_fleet.check_destroyed_status():
-            print('here')
             self._reset_level()
-    
+            sleep(1.5)
 
+    def _check_game_status(self):
+        if self.game_stats.hero_ships_left > 0:
+            self.game_stats.hero_ships_left -= 1
+            self._reset_level()
+
+            print(self.game_stats.hero_ships_left)
+        
+        else:
+          self.game_active = False
 
 
     def _reset_level(self):
