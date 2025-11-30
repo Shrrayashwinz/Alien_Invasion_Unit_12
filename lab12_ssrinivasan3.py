@@ -94,13 +94,14 @@ class AlienInvasion:
             self.settings.increase_difficulty()
             sleep(1.5)
             self.game_stats.update_level()
+            self.HUD.update_level()
 
     def _check_game_status(self):
         if self.game_stats.hero_ships_left > 0:
             self.game_stats.hero_ships_left -= 1
             self._reset_level()
 
-            print(self.game_stats.hero_ships_left)
+            print("LIVES LEFT:",self.game_stats.hero_ships_left)
         
         else:
           self.game_active = False
