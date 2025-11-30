@@ -136,6 +136,7 @@ class AlienInvasion:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+                self.game_stats.save_scores()
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
@@ -185,6 +186,8 @@ class AlienInvasion:
                 self.laser_sound.play()
 
         elif event.key == pygame.K_q:
+            self.running = False
+            self.game_stats.save_scores()
             pygame.quit()
             sys.exit()
 
