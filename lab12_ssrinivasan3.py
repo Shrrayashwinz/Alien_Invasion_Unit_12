@@ -28,7 +28,8 @@ class AlienInvasion:
         self.settings = Settings()
 
         self.settings.initialize_dynamic_settings()
- 
+
+
 
         self.screen = pygame.display.set_mode(
             (self.settings.screen_w, self.settings.screen_h)
@@ -43,6 +44,7 @@ class AlienInvasion:
         self.game_stats = GameStats(self)
 
         self.HUD = HUD(self)
+
 
         self.running = True
         self.clock = pygame.time.Clock()
