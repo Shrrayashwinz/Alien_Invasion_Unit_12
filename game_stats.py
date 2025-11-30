@@ -25,17 +25,18 @@ class GameStats():
         else:
             self.hi_score = 0
             self.save_scores()
-
+    
     def save_scores(self):
         scores = {
-            'high_score': self.hi_score
+            'hi_score': self.hi_score
         }
         contents = json.dumps(scores, indent=4)
+
         try: 
            self.path.write_text(contents)
+
         except FileNotFoundError as fnfe:
               print("File not found!:", fnfe)
-   
    
     def reset_stats(self, game):
         self.hero_ships_left = game.settings.starting_hero_ship_count
