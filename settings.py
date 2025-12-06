@@ -28,7 +28,7 @@ class Settings:
         self.hero_ship_h = 60
 
 
-        self.bullet_file = Path.cwd() / 'Assets' / 'images' / 'laserBlast.png'
+        self.bullet_file = Path.cwd() / 'Assets' / 'images' / 'greenlaser.png'
         self.laser_sound = Path.cwd() / 'Assets' / 'sound' / 'laser.mp3'
         self.impact = Path.cwd() / 'Assets' / 'sound' / 'impactSound.mp3'
 
